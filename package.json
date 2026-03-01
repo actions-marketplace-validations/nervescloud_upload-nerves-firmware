@@ -1,0 +1,31 @@
+{
+  "name": "deploy-firmware-action",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "package": "ncc build -o dist src/upload-firmware.js",
+    "lint": "standard src/*.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nervescloud/upload-nerves-firmware.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nervescloud/upload-nerves-firmware/issues"
+  },
+  "homepage": "https://github.com/nervescloud/upload-nerves-firmware#readme",
+  "description": "",
+  "dependencies": {
+    "@actions/core": "^3.0.0",
+    "@actions/exec": "^3.0.0",
+    "@actions/tool-cache": "^4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vercel/ncc": "^0.38.4",
+    "standard": "^17.1.2"
+  }
+}

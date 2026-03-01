@@ -1,0 +1,56 @@
+---
+name: upload-nerves-firmware
+
+description: >
+  Sign, upload, and deploy your Nerves firmware to NervesCloud or your self-hosted NervesHub instance.
+
+author: The NervesCloud Team
+
+branding:
+  color: blue
+  icon: upload-cloud
+
+inputs:
+  uri:
+    description: URI of the platform to deploy to.
+    required: false
+    default: https://manage.nervescloud.com
+  token:
+    description: Auth token for NervesCloud or your self-hosted NervesHub instance.
+    required: true
+  public-key:
+    description: Public Key for signing the firmware.
+    required: true
+  private-key:
+    description: Private Key for signing the firmware.
+    required: true
+  org:
+    description: Organization name which the firmware will be uploaded to.
+    required: true
+  product:
+    description: Product name which the firmware will be updated to.
+    required: true
+  deployment:
+    description: The name of the Deployment which should be updated with the newly uploaded firmware.
+    required: false
+    default:
+  firmware:
+    description: The file path of the firmware file to upload.
+    required: false
+    default:
+  working-directory:
+    description: Working directory for running CLI commands within.
+    required: false
+    default:
+  version:
+    description: Version of the NervesHub CLI to download and install.
+    required: false
+    default: latest
+
+outputs:
+  cli-version:
+    description: Exact version of the NervesCloud CLI that was installed.
+
+runs:
+  using: node20
+  main: dist/index.js
